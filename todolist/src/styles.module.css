@@ -1,0 +1,34 @@
+/* styles.module.css */
+.centeredDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this to the height you need */
+  background-color: blueviolet;
+  color: aliceblue;
+  font-family: cursive;
+}
+
+.buttonDone{
+ background-color: green;
+ font-size: 1rem;
+ color: aliceblue;
+ border-radius: 0.5rem;
+  border: 3px solid lawngreen;
+  margin: 1rem;
+
+}
+
+.buttonDel{
+  background-color: red;
+  font-size: 1rem;
+  color: aliceblue;
+  border-radius: 0.5rem;
+  border: 3px solid darkred;
+}
+
+.input{
+  border-radius: 0.5rem;
+  height: 1.5rem;
+}
