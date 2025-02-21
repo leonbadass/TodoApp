@@ -7,9 +7,12 @@ function App() {
   const [tasks, setTasks] = useState([]);
   
 
+  
+
   const deleteTask = (taskId) => {
     const newTasks = tasks.filter(( task) => taskId !== task.id);
     setTasks(newTasks);
+
   };
   const deleteSubtask= (taskId, subtaskId)=>{
     setTasks(tasks.map((task)=> taskId === task.id? {...task, subtasks:task.subtasks.filter(subtask=> subtask.id !== subtaskId)}:task));
@@ -23,7 +26,7 @@ function App() {
 
   const addSubtask = (taskId, subtaskdescription)=>{
     setTasks(tasks.map(task=> task.id === taskId? 
-      {...task,subtasks:[...task.subtasks ,{id:Date.now(), description: subtaskdescription}]}: task))
+      {...task,subtasks:[...task.subtasks ,{id:Date.now(), description: subtaskdescription, issubTaskdone: false,}]}: task))
 
   }
   
@@ -31,18 +34,21 @@ function App() {
     setTasks(tasks.map(task => task.id === taskId? {...task, done: true}: task))
   };
 
-  const subtaskDone = (taskId, subtaskId)=>{
-    setTasks(tasks.map(task=>taskId ===task.id?{...task,subtasks:task.subtasks.map(subtask=>subtaskId === subtask.id? {...subtask, done: true}:subtask)}:task))
-  }
+  const subtaskdone = (taskId, subtaskId) =>{
+    setTasks(tasks.map(task=>task.id ===taskId?{...task,subtasks:task.subtasks.map(subtask=>subtask.id === subtaskId? {...subtask, issubTaskdone: true}:subtask)}:task))
+  };
   return (
     <div className= {styles.centeredDiv}>
-      <h1>ToooDooo </h1>
-      <h2>Add tasks</h2>
+      <h1>ToDo List </h1>
       <Todoform
        styles={styles} 
        tasks={tasks} 
        setTasks={setTasks} 
-       addTask ={addTask} />
+       addTask ={addTask} 
+      
+
+       />
+       <h2 className = {tasks.length>0 ? styles.visible: styles.hidden}>Task(s)</h2>
       <ul>
         {tasks.map((task) => (
           <Task 
@@ -52,8 +58,8 @@ function App() {
           addSubtask={addSubtask}
           taskDone ={taskDone}
           task ={task}
-          subtaskDone = {subtaskDone}
-          styles ={styles}/>
+          styles ={styles}
+          subtaskdone={subtaskdone}/>
 
              
         ))}

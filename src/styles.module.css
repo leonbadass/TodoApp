@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Adjust this to the height you need */
+  height: 100vh;
   background-color: blueviolet;
   color: aliceblue;
   font-family: cursive;
@@ -31,4 +31,14 @@
 .input{
   border-radius: 0.5rem;
   height: 1.5rem;
+}
+
+.hidden{
+  display: none;
+}
+.visible{
+  display: block;
+}
+.taskDone{
+  text-decoration: line-through;
 }
