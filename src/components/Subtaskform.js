@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-function Subtaskform ({taskId, addSubtask }){
+function Subtaskform ({taskId, addSubtask , styles}){
     const [subtaskdescription,setSubtaskdescription] = useState('');
 
     const handleChange = (e)=>{setSubtaskdescription(e.target.value)};
@@ -14,12 +14,13 @@ function Subtaskform ({taskId, addSubtask }){
 
 
     return(
-    
+    <div className={styles.subtaskForm}>
     <form onSubmit = {handleSubmit}>
         <input type ='text' placeholder ="Add subtask" value={subtaskdescription} onChange ={handleChange}/>
-        <button type="submit">Add Subtask</button>
+        <button className={styles.button} type="submit">Add Subtask</button>
 
-    </form>)
+    </form>
+    </div>)
 }
 
 export default Subtaskform;

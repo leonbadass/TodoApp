@@ -39,16 +39,14 @@ function App() {
   };
   return (
     <div className= {styles.centeredDiv}>
-      <h1>ToDo List </h1>
+      <h1>The To-do APP </h1>
       <Todoform
        styles={styles} 
-       tasks={tasks} 
-       setTasks={setTasks} 
        addTask ={addTask} 
       
 
        />
-       <h2 className = {tasks.length>0 ? styles.visible: styles.hidden}>Task(s)</h2>
+       <h2 className = {tasks.length>0 ? styles.visible: styles.hidden}>Task Board</h2>
       <ul>
         {tasks.map((task) => (
           <Task 

@@ -1,44 +1,165 @@
 /* styles.module.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.button:hover{
+  background-color: turquoise;
+  color: teal;
+}
+
 .centeredDiv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: center;
-  height: 100vh;
-  background-color: blueviolet;
+  min-height: 100vh;
+  max-height: full;
+  background-color: darkslategrey;
   color: aliceblue;
   font-family: cursive;
+  padding-top: 3rem;
+ 
+
+}
+.centeredDiv h2{
+  color: beige;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+
+.centeredDiv h1{
+  font-family: sans-serif;
+  color: beige;
+  font-weight: bold;
+}
+.buttonDone:hover{
+  background-color: turquoise;
+  color: teal;
+
 }
 
 .buttonDone{
- background-color: green;
- font-size: 1rem;
+ background-color: teal;
+ font-size: 0.8rem;
  color: aliceblue;
  border-radius: 0.5rem;
-  border: 3px solid lawngreen;
-  margin: 1rem;
+  margin-left: 0.5rem;
 
 }
 
-.buttonDel{
-  background-color: red;
-  font-size: 1rem;
-  color: aliceblue;
-  border-radius: 0.5rem;
-  border: 3px solid darkred;
-}
 
 .input{
-  border-radius: 0.5rem;
-  height: 1.5rem;
+  border: 0.5em solid blanchedalmond;
+  height: 2em;
+  width: 20em;
+
+}
+.todoFormButton{
+  border: 0.5em solid blanchedalmond;
+  height: 1.5em;
+
 }
 
 .hidden{
   display: none;
 }
 .visible{
-  display: block;
+  
+}
+.todoForm button{
+  background-color: teal;
+  color: beige;
+  height: 2.3em;
+  border: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 0.5em;
+  border-radius: 0.5em;
+  padding: 0.5em;
+  font-weight: 700;
+  
+}
+.todoForm input{
+  border: 2px solid teal;
+  height: 2.5em;
+  
+}
+.taskCard{
+  border: 0.4em solid teal;
+  padding: 1.5em 4em 2em;
+  margin-bottom: 2em;
+  background-color: #1a1817;
+  border-radius: 0.5em;
+  color: teal;
+  list-style: none;
+
+  
+  
+}
+.subtaskCard{
+  margin: 1.5rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0.4rem;
+  color: beige;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+
+  
+}
+
+.subtaskCard button{
+  background-color: teal;
+  color: beige;
+  border-radius: 1.5rem;
+}
+
+.subtask{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
+  border-radius: 0.3rem;
+  gap: 0.1rem
+  
+
 }
 .taskDone{
-  text-decoration: line-through;
+  color: gray;
+}
+
+.subtaskForm{
+  height: 1.5rem;
+  
+}
+.subtaskForm input{
+  background-color: lightgray;
+  height: 1.4rem;
+  border: none;
+
+}
+.subtaskForm button{
+  background-color: darkslategray;
+  height: 1.5rem;
+  border: none;
+  color: beige;
+}
+
+.taskTitle{
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  display: block;
+  
+  
+}
+.taskcardTitle{
+  border-bottom: 2px solid teal;
+  padding-bottom: 1em;
+}
+.taskCard h6 {
+  font-size: 1.5em;
+  margin-bottom: 0;
 }
